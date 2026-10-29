@@ -1,0 +1,23 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+
+spring:
+  application:
+    name: coder-agent
+  mvc:
+    problemdetails:
+      enabled: false
+
+coder-agent:
+  ollama:
+    base-url: ${CODER_AGENT_OLLAMA_BASE_URL:http://localhost:11434}
+    model: ${CODER_AGENT_OLLAMA_MODEL:qwen2.5-coder:7b}
+    connect-timeout: ${CODER_AGENT_OLLAMA_CONNECT_TIMEOUT:3s}
+    request-timeout: ${CODER_AGENT_OLLAMA_REQUEST_TIMEOUT:120s}
+    max-history-messages: ${CODER_AGENT_MAX_HISTORY_MESSAGES:20}
+    max-context-chars: ${CODER_AGENT_MAX_CONTEXT_CHARS:100000}
+    max-sessions: ${CODER_AGENT_MAX_SESSIONS:500}
+    max-message-chars: ${CODER_AGENT_MAX_MESSAGE_CHARS:20000}
+    max-output-tokens: ${CODER_AGENT_MAX_OUTPUT_TOKENS:2048}
+    max-response-chars: ${CODER_AGENT_MAX_RESPONSE_CHARS:30000}
